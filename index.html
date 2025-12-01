@@ -16,12 +16,11 @@
 
     <div class="tab">
         <button class="tablinks tablinks_top" onclick="openTab(event, 'tab_petrissage', 'top')"
-            id="petrissage">Petrissage</button>
+            id="petrissage">Proportions petrissage</button>
         <button class="tablinks tablinks_top" onclick="openTab(event, 'tab_calcul_farine', 'top')"
-            id="calcul_farine">Calcul
-            farine</button>
-        <!--<button class="tablinks tablinks_top" onclick="openTab(event, 'tab_calcul_eau', 'top')"
-            id="calcul_eau">Temperature eau</button> -->
+            id="calcul_farine">Farine pour x patons</button>
+        <button class="tablinks tablinks_top" onclick="openTab(event, 'tab_calcul_eau', 'top')"
+            id="calcul_eau">Température eau</button>
     </div>
 
 
@@ -60,25 +59,25 @@
             <input class="validate" id="calcul" type="button" value="Calculer" onclick="calcul()">
             <br>
             <br>
-            <div class="field">
-                <label for="result_farine">Farine (en g)</label>
-                <input id="result_farine" type="number" min="0" disabled>
-            </div>
-            <div class="field">
-                <label for="result_h2o">Eau (en g)</label>
-                <input id="result_h2o" type="number" min="0" disabled>
-            </div>
-            <div class="field">
-                <label for="result_levure">Levure (en g)</label>
-                <input id="result_levure" type="number" min="0" disabled>
-            </div>
-            <div class="field">
-                <label for="result_sel">Sel (en g)</label>
-                <input id="result_sel" type="number" min="0" disabled>
-            </div>
-            <div class="field">
-                <label for="result_huile">Huile d'olive (en g)</label>
-                <input id="result_huile" type="number" min="0" disabled>
+                <div class="field">
+                    <label for="result_farine">Farine (en g)</label>
+                    <input id="result_farine" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                    <label for="result_h2o">Eau (en g)</label>
+                    <input id="result_h2o" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                    <label for="result_levure">Levure (en g)</label>
+                    <input id="result_levure" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                    <label for="result_sel">Sel (en g)</label>
+                    <input id="result_sel" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                    <label for="result_huile">Huile d'olive (en g)</label>
+                    <input id="result_huile" type="number" min="0" disabled>
             </div>
         </div>
 
@@ -114,16 +113,16 @@
             </div>
             <div id="biga_j2" class="tabcontent tabcontent_biga">
                 <div class="field">
-                <label for="result_farine_biga_j2">Farine (en g)</label>
-                <input id="result_farine_biga_j2" type="number" min="0" disabled>
+                    <label for="result_farine_biga_j2">Farine (en g)</label>
+                    <input id="result_farine_biga_j2" type="number" min="0" disabled>
                 </div>
                 <div class="field">
-                <label for="result_h2o_biga_j2">Eau (en g)</label>
-                <input id="result_h2o_biga_j2" type="number" min="0" disabled>
+                    <label for="result_h2o_biga_j2">Eau (en g)</label>
+                    <input id="result_h2o_biga_j2" type="number" min="0" disabled>
                 </div>
                 <div class="field">
-                <label for="result_sel_biga_j2">Sel (en g)</label>
-                <input id="result_sel_biga_j2" type="number" min="0" disabled>
+                    <label for="result_sel_biga_j2">Sel (en g)</label>
+                    <input id="result_sel_biga_j2" type="number" min="0" disabled>
                 </div>
             </div>
 
@@ -132,8 +131,8 @@
 
         <div id="poolish" class="tabcontent tabcontent_petrissage">
             <div class="field">
-            <label for="input_poolish">Poolish (en %)</label>
-            <input id="input_poolish" type="number" min="0">
+                <label for="input_poolish">Poolish (en %)</label>
+                <input id="input_poolish" type="number" min="0">
             </div>
             <input class="validate" id="calcul" type="button" value="Calculer" onclick="calcul_poolish()">
             <br><br>
@@ -145,30 +144,30 @@
             </div>
             <div id="poolish_j1" class="tabcontent tabcontent_poolish">
                 <div class="field">
-                <label for="result_farine_poolish_j1">Farine (en g)</label>
-                <input id="result_farine_poolish_j1" type="number" min="0" disabled>
+                    <label for="result_farine_poolish_j1">Farine (en g)</label>
+                    <input id="result_farine_poolish_j1" type="number" min="0" disabled>
                 </div>
                 <div class="field">
-                <label for="result_h2o_poolish_j1">Eau (en g)</label>
-                <input id="result_h2o_poolish_j1" type="number" min="0" disabled>
+                    <label for="result_h2o_poolish_j1">Eau (en g)</label>
+                    <input id="result_h2o_poolish_j1" type="number" min="0" disabled>
                 </div>
                 <div class="field">
-                <label for="result_levure_poolish_j1">Levure (en g)</label>
-                <input id="result_levure_poolish_j1" type="number" min="0" disabled>
+                    <label for="result_levure_poolish_j1">Levure (en g)</label>
+                    <input id="result_levure_poolish_j1" type="number" min="0" disabled>
                 </div>
             </div>
             <div id="poolish_j2" class="tabcontent tabcontent_poolish">
                 <div class="field">
-                <label for="result_farine_poolish_j2">Farine (en g)</label>
-                <input id="result_farine_poolish_j2" type="number" min="0" disabled>
+                    <label for="result_farine_poolish_j2">Farine (en g)</label>
+                    <input id="result_farine_poolish_j2" type="number" min="0" disabled>
                 </div>
                 <div class="field">
-                <label for="result_h2o_poolish_j2">Eau (en g)</label>
-                <input id="result_h2o_poolish_j2" type="number" min="0" disabled>
+                    <label for="result_h2o_poolish_j2">Eau (en g)</label>
+                    <input id="result_h2o_poolish_j2" type="number" min="0" disabled>
                 </div>
                 <div class="field">
-                <label for="result_sel_poolish_j2">Sel (en g)</label>
-                <input id="result_sel_poolish_j2" type="number" min="0" disabled>
+                    <label for="result_sel_poolish_j2">Sel (en g)</label>
+                    <input id="result_sel_poolish_j2" type="number" min="0" disabled>
                 </div>
             </div>
             <script>document.getElementById("poolish_j1_tab").click();</script>
@@ -179,16 +178,16 @@
     <script>document.getElementById("tab_petrissage").click();</script>
     <div class="tabcontent tabcontent_top" id="tab_calcul_farine">
         <div class="field">
-        <label for="input_nb_patons">Nombre de patons désirés : </label>
-        <input id="input_nb_patons" type="number" min="0">
+            <label for="input_nb_patons">Nombre de patons désirés : </label>
+            <input id="input_nb_patons" type="number" min="0">
         </div>
         <div class="field">
-        <label for="input_poids_patons">Poids des patons : </label>
-        <input id="input_poids_patons" type="number" min="0">
+            <label for="input_poids_patons">Poids des patons : </label>
+            <input id="input_poids_patons" type="number" min="0">
         </div>
         <div class="field">
-        <label for="input_h2o_patons">Hydrataion de la pate (en %) : </label>
-        <input id="input_h2o_patons" type="number" min="0">
+            <label for="input_h2o_patons">Hydratation de la pate (en %) : </label>
+            <input id="input_h2o_patons" type="number" min="0">
         </div>
         <input class="validate" id="calcul_patons" type="button" value="Calculer" onclick="calcul_patons()">
         <br>
@@ -198,18 +197,18 @@
 
     <div class="tabcontent tabcontent_top" id="tab_calcul_eau">
         <div class="field">
-        <label for="input_temp_amb">Température ambiante : </label>
-        <input id="input_temp_amb" type="number" min="0">
+            <label for="input_temp_amb">Température ambiante : </label>
+            <input id="input_temp_amb" type="number" min="0">
         </div>
         <div class="field">
-        <label for="input_temp_farine">Température farine : </label>
-        <input id="input_temp_farine" type="number" min="0">
+            <label for="input_temp_farine">Température farine : </label>
+            <input id="input_temp_farine" type="number" min="0">
         </div>
         <div class="field">
-        <label for="input_temp_machine">Température machine : </label>
-        <input id="input_temp_machine" type="number" min="0">
+            <label for="input_temp_machine">Température friction pétrin : </label>
+            <input id="input_temp_machine" type="number" min="0">
         </div>
-        <input id="calcul_eau" type="button" value="Calculer" onclick="calcul_temperature_eau()">
+        <input class="validate" id="calcul_eau" type="button" value="Calculer" onclick="calcul_temperature_eau()">
         <br>
         <p id="result_eau"></p>
         <p id="explications_eau"></p>

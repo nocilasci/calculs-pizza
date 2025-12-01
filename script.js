@@ -1,6 +1,4 @@
 function calcul() {
-    console.log("test");
-
     var farine = document.getElementById("input_farine").value;
     var h2o = document.getElementById("input_h2o").value;
     var levure = document.getElementById("input_levure").value;
@@ -17,12 +15,9 @@ function calcul() {
     } else {
         document.getElementById("result_huile").value = 0
     }
-
 }
 
 function calcul_biga() {
-    console.log("calcul biga");
-
     var farine = document.getElementById("input_farine").value;
     var h2o = document.getElementById("input_h2o").value;
     var levure = document.getElementById("input_levure").value;
@@ -48,8 +43,6 @@ function calcul_biga() {
 }
 
 function calcul_poolish() {
-    console.log("calcul poolish");
-
     var farine = document.getElementById("input_farine").value;
     var h2o = document.getElementById("input_h2o").value;
     var levure = document.getElementById("input_levure").value;
@@ -80,7 +73,7 @@ function calcul_patons() {
     var h2o = document.getElementById("input_h2o_patons").value;
     var result = Math.round((nb * poids) / (1 + h2o / 100));
 
-    document.getElementById("result_patons").innerHTML = `Pour ${nb} patons de ${poids}g à ${h2o}% d'hydratation, il vous faudra <strong>${result}g</strong> de farine.`;
+    document.getElementById("result_patons").innerHTML = `Pour ${nb} patons de ${poids}g à ${h2o}% d'hydratation, il faudra <strong>${result}g</strong> de farine.`;
     document.getElementById("explications_patons").innerHTML = `Explications : Nb patons (${nb}) x poids du paton (${poids}) / 1,% h2o (1,${h2o}) = poids farine.`;
 }
 
@@ -90,7 +83,8 @@ function calcul_temperature_eau() {
     var temp_machine = document.getElementById("input_temp_machine").value;
     var result = Math.round(72 - temp_amb - temp_farine - temp_machine);
 
-    document.getElementById("result_eau").innerHTML = `${result}`;
+    document.getElementById("result_eau").innerHTML = `L'eau à utiliser devrait être à <strong>${result}°</strong>.`;
+    document.getElementById("explications_eau").innerHTML = `Explications : T° cible (24°) x 3 - T° ambiante - T° farine - T° friction = Température à utiliser`;
 }
 
 function openTab(evt, name, type) {
