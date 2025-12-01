@@ -1,14 +1,220 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculateur</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
     <script src="script.js"></script>
+
+    <div class="tab">
+        <button class="tablinks tablinks_top" onclick="openTab(event, 'tab_petrissage', 'top')"
+            id="petrissage">Petrissage</button>
+        <button class="tablinks tablinks_top" onclick="openTab(event, 'tab_calcul_farine', 'top')"
+            id="calcul_farine">Calcul
+            farine</button>
+        <!--<button class="tablinks tablinks_top" onclick="openTab(event, 'tab_calcul_eau', 'top')"
+            id="calcul_eau">Temperature eau</button> -->
+    </div>
+
+
+    <div class="tabcontent tabcontent_top" id="tab_petrissage">
+
+        <div class="tab">
+            <button class="tablinks tablinks_petrissage" onclick="openTab(event, 'direct', 'petrissage')"
+                id="directTab">Direct</button>
+            <button class="tablinks tablinks_petrissage" onclick="openTab(event, 'biga', 'petrissage')">Biga</button>
+            <button class="tablinks tablinks_petrissage"
+                onclick="openTab(event, 'poolish', 'petrissage')">Poolish</button>
+        </div>
+        <br>
+        <div class="field">
+            <label for="input_farine">Farine (en g)</label>
+            <input id="input_farine" type="number" min="0">
+        </div>
+        <div class="field">
+            <label for="input_h2o">Hydratation (en %)</label>
+            <input id="input_h2o" type="number" min="0">
+        </div>
+        <div class="field">
+            <label for="input_levure">Levure (en %)</label>
+            <input id="input_levure" type="number" min="0">
+        </div>
+        <div class="field">
+            <label for="input_sel">Sel (en %)</label>
+            <input id="input_sel" type="number" min="0" value="2.5">
+        </div>
+        <div class="field">
+            <label for="input_huile">Huile d'olive (en %)</label>
+            <input id="input_huile" type="number" min="0">
+        </div>
+
+        <div id="direct" class="tabcontent tabcontent_petrissage">
+            <input class="validate" id="calcul" type="button" value="Calculer" onclick="calcul()">
+            <br>
+            <br>
+            <div class="field">
+                <label for="result_farine">Farine (en g)</label>
+                <input id="result_farine" type="number" min="0" disabled>
+            </div>
+            <div class="field">
+                <label for="result_h2o">Eau (en g)</label>
+                <input id="result_h2o" type="number" min="0" disabled>
+            </div>
+            <div class="field">
+                <label for="result_levure">Levure (en g)</label>
+                <input id="result_levure" type="number" min="0" disabled>
+            </div>
+            <div class="field">
+                <label for="result_sel">Sel (en g)</label>
+                <input id="result_sel" type="number" min="0" disabled>
+            </div>
+            <div class="field">
+                <label for="result_huile">Huile d'olive (en g)</label>
+                <input id="result_huile" type="number" min="0" disabled>
+            </div>
+        </div>
+
+        <div id="biga" class="tabcontent tabcontent_petrissage">
+            <div class="field">
+                <label for="input_biga">Biga (en %)</label>
+                <input id="input_biga" type="number" min="0">
+            </div>
+            <div class="field">
+                <label for="input_biga_h2o">Hydratation Jour 1 (en %)</label>
+                <input id="input_biga_h2o" type="number" min="0" value="45">
+            </div>
+            <input class="validate" id="calcul" type="button" value="Calculer" onclick="calcul_biga()">
+            <br><br>
+            <div class="tab">
+                <button class="tablinks tablinks_biga" onclick="openTab(event, 'biga_j1', 'biga')" id="biga_j1_tab">Jour
+                    1</button>
+                <button class="tablinks tablinks_biga" onclick="openTab(event, 'biga_j2', 'biga')">Jour 2</button>
+            </div>
+            <div id="biga_j1" class="tabcontent tabcontent_biga">
+                <div class="field">
+                    <label for="result_farine_biga_j1">Farine (en g)</label>
+                    <input id="result_farine_biga_j1" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                    <label for="result_h2o_biga_j1">Eau (en g)</label>
+                    <input id="result_h2o_biga_j1" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                    <label for="result_levure_biga_j1">Levure (en g)</label>
+                    <input id="result_levure_biga_j1" type="number" min="0" disabled>
+                </div>
+            </div>
+            <div id="biga_j2" class="tabcontent tabcontent_biga">
+                <div class="field">
+                <label for="result_farine_biga_j2">Farine (en g)</label>
+                <input id="result_farine_biga_j2" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                <label for="result_h2o_biga_j2">Eau (en g)</label>
+                <input id="result_h2o_biga_j2" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                <label for="result_sel_biga_j2">Sel (en g)</label>
+                <input id="result_sel_biga_j2" type="number" min="0" disabled>
+                </div>
+            </div>
+
+            <script>document.getElementById("biga_j1_tab").click();</script>
+        </div>
+
+        <div id="poolish" class="tabcontent tabcontent_petrissage">
+            <div class="field">
+            <label for="input_poolish">Poolish (en %)</label>
+            <input id="input_poolish" type="number" min="0">
+            </div>
+            <input class="validate" id="calcul" type="button" value="Calculer" onclick="calcul_poolish()">
+            <br><br>
+            <div class="tab">
+                <button class="tablinks tablinks_poolish" onclick="openTab(event, 'poolish_j1', 'poolish')"
+                    id="poolish_j1_tab">Jour 1</button>
+                <button class="tablinks tablinks_poolish" onclick="openTab(event, 'poolish_j2', 'poolish')">Jour
+                    2</button>
+            </div>
+            <div id="poolish_j1" class="tabcontent tabcontent_poolish">
+                <div class="field">
+                <label for="result_farine_poolish_j1">Farine (en g)</label>
+                <input id="result_farine_poolish_j1" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                <label for="result_h2o_poolish_j1">Eau (en g)</label>
+                <input id="result_h2o_poolish_j1" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                <label for="result_levure_poolish_j1">Levure (en g)</label>
+                <input id="result_levure_poolish_j1" type="number" min="0" disabled>
+                </div>
+            </div>
+            <div id="poolish_j2" class="tabcontent tabcontent_poolish">
+                <div class="field">
+                <label for="result_farine_poolish_j2">Farine (en g)</label>
+                <input id="result_farine_poolish_j2" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                <label for="result_h2o_poolish_j2">Eau (en g)</label>
+                <input id="result_h2o_poolish_j2" type="number" min="0" disabled>
+                </div>
+                <div class="field">
+                <label for="result_sel_poolish_j2">Sel (en g)</label>
+                <input id="result_sel_poolish_j2" type="number" min="0" disabled>
+                </div>
+            </div>
+            <script>document.getElementById("poolish_j1_tab").click();</script>
+        </div>
+
+    </div>
+    <script>document.getElementById("DirectTab").click();</script>
+    <script>document.getElementById("tab_petrissage").click();</script>
+    <div class="tabcontent tabcontent_top" id="tab_calcul_farine">
+        <div class="field">
+        <label for="input_nb_patons">Nombre de patons désirés : </label>
+        <input id="input_nb_patons" type="number" min="0">
+        </div>
+        <div class="field">
+        <label for="input_poids_patons">Poids des patons : </label>
+        <input id="input_poids_patons" type="number" min="0">
+        </div>
+        <div class="field">
+        <label for="input_h2o_patons">Hydrataion de la pate (en %) : </label>
+        <input id="input_h2o_patons" type="number" min="0">
+        </div>
+        <input class="validate" id="calcul_patons" type="button" value="Calculer" onclick="calcul_patons()">
+        <br>
+        <p id="result_patons"></p>
+        <p id="explications_patons"></p>
+    </div>
+
+    <div class="tabcontent tabcontent_top" id="tab_calcul_eau">
+        <div class="field">
+        <label for="input_temp_amb">Température ambiante : </label>
+        <input id="input_temp_amb" type="number" min="0">
+        </div>
+        <div class="field">
+        <label for="input_temp_farine">Température farine : </label>
+        <input id="input_temp_farine" type="number" min="0">
+        </div>
+        <div class="field">
+        <label for="input_temp_machine">Température machine : </label>
+        <input id="input_temp_machine" type="number" min="0">
+        </div>
+        <input id="calcul_eau" type="button" value="Calculer" onclick="calcul_temperature_eau()">
+        <br>
+        <p id="result_eau"></p>
+        <p id="explications_eau"></p>
+    </div>
+    <script>document.getElementById("petrissage").click();</script>
 </body>
+
 </html>
