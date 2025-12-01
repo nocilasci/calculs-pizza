@@ -36,9 +36,9 @@ function calcul_biga() {
     document.getElementById("result_sel_biga_j2").value = farine * sel / 100;
 
     if (huile > 0) {
-        document.getElementById("result_huile").value = farine * huile / 100;
+        document.getElementById("result_huile_biga_j2").value = farine * huile / 100;
     } else {
-        document.getElementById("result_huile").value = 0
+        document.getElementById("result_huile_biga_j2").value = 0
     }
 }
 
@@ -61,9 +61,9 @@ function calcul_poolish() {
 
     document.getElementById("result_sel_poolish_j2").value = farine * sel / 100;
     if (huile > 0) {
-        document.getElementById("result_huile").value = farine * huile / 100;
+        document.getElementById("result_huile_poolish_j2").value = farine * huile / 100;
     } else {
-        document.getElementById("result_huile").value = 0
+        document.getElementById("result_huile_poolish_j2").value = 0
     }
 }
 
