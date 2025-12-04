@@ -21,6 +21,8 @@
             id="calcul_farine">Farine pour x patons</button>
         <button class="tablinks tablinks_top" onclick="openTab(event, 'tab_calcul_eau', 'top')"
             id="calcul_eau">Température eau</button>
+        <button class="tablinks tablinks_top" onclick="openTab(event, 'tab_calcul_focaccia', 'top')"
+            id="calcul_focaccia">Poids paton focaccia</button>
     </div>
 
 
@@ -220,6 +222,20 @@
         <br>
         <p id="result_eau"></p>
         <p id="explications_eau"></p>
+    </div>
+
+    <div class="tabcontent tabcontent_top" id="tab_calcul_focaccia">
+        <div class="field">
+            <label for="input_longueur">Longueur de la plaque : </label>
+            <input id="input_longueur" type="number" min="0">
+        </div>
+        <div class="field">
+            <label for="input_largeur">Largeur de la plaque : </label>
+            <input id="input_largeur" type="number" min="0">
+        </div>
+        <input class="validate" id="calcul_focaccia" type="button" value="Calculer" onclick="calcul_focaccia()">
+        <p id="result_focaccia"></p>
+        <p id="explications_focaccia"></p>
     </div>
     <script>document.getElementById("petrissage").click();</script>
 </body>

@@ -55,7 +55,11 @@ function calcul_poolish() {
     document.getElementById("result_farine_poolish_j2").value = farine - farine_j1;
 
     document.getElementById("result_h2o_poolish_j1").value = farine_j1;
-    document.getElementById("result_h2o_poolish_j2").value = farine * h2o / 100 - farine_j1;
+    var h2o_j2 = farine * h2o / 100 - farine_j1;
+    if (h2o_j2 < 0) {
+        h2o_j2 = 0;
+    }
+    document.getElementById("result_h2o_poolish_j2").value = h2o_j2;
 
     document.getElementById("result_levure_poolish_j1").value = farine * levure / 100;
 
@@ -85,6 +89,20 @@ function calcul_temperature_eau() {
 
     document.getElementById("result_eau").innerHTML = `L'eau à utiliser devrait être à <strong>${result}°</strong>.`;
     document.getElementById("explications_eau").innerHTML = `Explications : T° cible (24°) x 3 - T° ambiante - T° farine - T° friction = Température à utiliser`;
+}
+
+function calcul_focaccia() {
+    var largeur = document.getElementById("input_largeur").value;
+    var longueur = document.getElementById("input_longueur").value;
+    var tmp = largeur * longueur;
+    document.getElementById("result_focaccia").innerHTML = `Choisir selon l'épaisseur souhaitée :<br>
+        - <strong>${tmp * 0.5}g</strong> (plutôt fin)<br>
+        - <strong>${tmp * 0.55}g</strong><br>
+        - <strong>${tmp * 0.6}g</strong> (épaisseur moyenne)<br>
+        - <strong>${tmp * 0.65}g</strong><br>
+        - <strong>${tmp * 0.7}g</strong> (épais)`;
+    document.getElementById("explications_focaccia").innerHTML = `Explications : Pour calculer le poids du paton :<br> 
+        Largeur x Longueur x (entre 0.5 et 0.7 selon l'épaisseur désirée)`;
 }
 
 function openTab(evt, name, type) {
