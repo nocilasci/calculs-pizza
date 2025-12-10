@@ -32,7 +32,7 @@ function calcul_biga() {
     var h2o_j1 = farine_j1 * h2o_j1 / 100;
     document.getElementById("result_h2o_biga_j1").value = h2o_j1;
     document.getElementById("result_h2o_biga_j2").value = farine * h2o / 100 - h2o_j1;
-    document.getElementById("result_levure_biga_j1").value = farine * levure / 100;
+    document.getElementById("result_levure_biga_j1").value = farine_j1 * levure / 100;
     document.getElementById("result_sel_biga_j2").value = farine * sel / 100;
 
     if (huile > 0) {
@@ -61,7 +61,7 @@ function calcul_poolish() {
     }
     document.getElementById("result_h2o_poolish_j2").value = h2o_j2;
 
-    document.getElementById("result_levure_poolish_j1").value = farine * levure / 100;
+    document.getElementById("result_levure_poolish_j1").value = farine_j1 * levure / 100;
 
     document.getElementById("result_sel_poolish_j2").value = farine * sel / 100;
     if (huile > 0) {
